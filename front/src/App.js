@@ -46,7 +46,7 @@ function App() {
     
     // Get request using Artist ID to get Artist Albums
 
-    const returnedAlbums = await fetch('https://api.spotify.com/v1/artists/' + artistID + '/albums' + '?include_groups=album&market=US&limit=10', artistParameters)
+    const returnedAlbums = await fetch('https://api.spotify.com/v1/artists/' + artistID + '/albums' + '?include_groups=album&market=UK&limit=10', artistParameters)
     .then(response => response.json())
     .then(data => { console.log(data.items)
     setAlbums(data.items) })
@@ -85,7 +85,7 @@ function App() {
             <Card.Title>{album.name}</Card.Title>
             </Card.Body>
           </Card> 
-          )
+          ) 
         })}
          
       </Row>
