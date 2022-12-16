@@ -1,11 +1,11 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Container, InputGroup, FormControl, Row, Card } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
 
-const CLIENT_ID = 'a73563a8d98a446cbcfdb55197fd076b';
-const CLIENT_SECRET = 'acbc2e6f09f0431dba1a3d3a35882081';
+const CLIENT_ID = 'b9c5fae6d8a14ae98dc71f7395057e6b';
+const CLIENT_SECRET = '58b476258832436e8bd7b1035b142506';
 
 function App() {
   const [searchInput, setSearchInput] = useState('');
@@ -46,14 +46,15 @@ function App() {
     
     // Get request using Artist ID to get Artist Albums
 
-    const returnedAlbums = await fetch('https://api.spotify.com/v1/artists/' + artistID + '/albums' + '?include_groups=album&market=UK&limit=10', artistParameters)
+    const returnedAlbums = await fetch('https://api.spotify.com/v1/artists/' + artistID + '/albums' + '?include_groups=album&market=US&limit=10', artistParameters)
     .then(response => response.json())
     .then(data => { console.log(data.items)
     setAlbums(data.items) })
     
     // Display Albums to the user
+    console.log(returnedAlbums);
   }
-  console.log(albums);
+  
   return (
     <div className="App">
      <Container>
