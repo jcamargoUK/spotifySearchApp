@@ -35,6 +35,7 @@ function App() {
       headers: {
         'Content-Type': 'application/json', // Set content type to application/json
         'Authorization': 'Bearer ' + accessToken // Set authorization to Bearer token
+        
     }
   }
     const artistID = await fetch('https://api.spotify.com/v1/search?q=' + searchInput + '&type=artist', artistParameters) // Get request to get artist ID
