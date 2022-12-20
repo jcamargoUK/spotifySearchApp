@@ -45,7 +45,7 @@ function App() {
     console.log("Artist ID is " + artistID); // Log artist ID to console
     
     
-     const returnedAlbums = await fetch('https://api.spotify.com/v1/artists/' + artistID + '/albums' + 'include_groups=album&market=US&limit=10', artistParameters) // Get request to get albums
+     const returnedAlbums = await fetch('https://api.spotify.com/v1/artists/' + artistID + '/albums' + '?include_groups=album&market=US&limit=10', artistParameters) // Get request to get albums
     .then(response => response.json()) // Convert response to JSON
     .then(data => { console.log(data.items) // Log albums to console
     setAlbums(data.items) }) // Set albums to data.items
